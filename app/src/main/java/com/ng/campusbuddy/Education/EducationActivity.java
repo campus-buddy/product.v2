@@ -1,4 +1,4 @@
-package com.ng.campusbuddy;
+package com.ng.campusbuddy.Education;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,21 +11,40 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.ng.campusbuddy.Education.EducationActivity;
+import com.luseen.spacenavigation.SpaceItem;
+import com.luseen.spacenavigation.SpaceNavigationView;
+import com.luseen.spacenavigation.SpaceOnClickListener;
+import com.ng.campusbuddy.MainActivity;
+import com.ng.campusbuddy.R;
 
-public class MainActivity extends AppCompatActivity {
+public class EducationActivity extends AppCompatActivity {
 
-    Context mcontext = MainActivity.this;
+    Context mcontext = EducationActivity.this;
 
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    SpaceNavigationView spaceNavigationView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_education);
 
+        /*Navigation Drawer*/
         SetupNavigationDrawer();
+        /*---------------------*/
+
+        /*Bottom Navigation*/
+        SetUpBottomNavigation();
+        spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_timetable));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_myshelf));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_bookmark));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_qa));
+        /*---------------------------------------------*/
+
     }
 
     private void SetupNavigationDrawer() {
@@ -42,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(mcontext, "Home", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_education:
-                        Intent education = new Intent(mcontext, EducationActivity.class);
-                        startActivity(education);
                         break;
                     case R.id.nav_social:
                         Toast.makeText(mcontext, "Social", Toast.LENGTH_SHORT).show();
@@ -66,4 +83,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    /*Bottom Navigation*/
+    private void SetUpBottomNavigation() {
+
+        spaceNavigationView = findViewById(R.id.edu_bottom_nav);
+
+
+        spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
+            @Override
+            public void onCentreButtonClick() {
+                Toast.makeText(EducationActivity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
+                spaceNavigationView.setCentreButtonSelectable(true);
+            }
+
+            @Override
+            public void onItemClick(int itemIndex, String itemName) {
+                Toast.makeText(EducationActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onItemReselected(int itemIndex, String itemName) {
+                Toast.makeText(EducationActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    /*-------------------------------------------*/
 }
