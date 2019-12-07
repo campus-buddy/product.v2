@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.ng.campusbuddy.Education.EducationActivity;
+import com.ng.campusbuddy.Social.SocialActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.nav_home:
-                        Toast.makeText(mcontext, "Home", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_education:
                         Intent education = new Intent(mcontext, EducationActivity.class);
                         startActivity(education);
                         break;
                     case R.id.nav_social:
-                        Toast.makeText(mcontext, "Social", Toast.LENGTH_SHORT).show();
+                        Intent social = new Intent(mcontext, SocialActivity.class);
+                        startActivity(social);
                         break;
                     case R.id.nav_entertainment:
                         Toast.makeText(mcontext, "Entertainment", Toast.LENGTH_SHORT).show();

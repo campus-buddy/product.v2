@@ -1,4 +1,4 @@
-package com.ng.campusbuddy.Education;
+package com.ng.campusbuddy.Social;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,32 +9,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
+import com.ng.campusbuddy.Education.EducationActivity;
 import com.ng.campusbuddy.MainActivity;
 import com.ng.campusbuddy.R;
-import com.ng.campusbuddy.Social.SocialActivity;
 
-public class EducationActivity extends AppCompatActivity {
+public class SocialActivity extends AppCompatActivity {
 
-    Context mcontext = EducationActivity.this;
+    Context mcontext = SocialActivity.this;
 
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
     DrawerLayout drawerLayout;
     SpaceNavigationView spaceNavigationView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_education);
+        setContentView(R.layout.activity_social);
 
         /*Navigation Drawer*/
         SetupNavigationDrawer();
@@ -43,10 +40,10 @@ public class EducationActivity extends AppCompatActivity {
         /*Bottom Navigation*/
         SetUpBottomNavigation();
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
-        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_timetable));
-        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_myshelf));
-        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_bookmark));
-        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_qa));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_chat));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_group_chat));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_chat_room));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_search));
         /*---------------------------------------------*/
 
     }
@@ -66,10 +63,10 @@ public class EducationActivity extends AppCompatActivity {
                         startActivity(home);
                         break;
                     case R.id.nav_education:
+                        Intent education = new Intent(mcontext, EducationActivity.class);
+                        startActivity(education);
                         break;
                     case R.id.nav_social:
-                        Intent social = new Intent(mcontext, SocialActivity.class);
-                        startActivity(social);
                         break;
                     case R.id.nav_entertainment:
                         Toast.makeText(mcontext, "Entertainment", Toast.LENGTH_SHORT).show();
@@ -123,4 +120,5 @@ public class EducationActivity extends AppCompatActivity {
         });
     }
     /*-------------------------------------------*/
+
 }

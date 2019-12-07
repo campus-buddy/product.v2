@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Social.SocialActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/app_bar" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/edu_bottom_nav">
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </FrameLayout>
+
+        <com.luseen.spacenavigation.SpaceNavigationView
+            android:id="@+id/edu_bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            app:active_item_color="@color/colorPrimary"
+            app:centre_button_color="@color/colorPrimary"
+            app:inactive_item_color="@color/grey"
+            app:space_background_color="?attr/cardbackground"
+            app:centre_button_icon="@drawable/ic_match_meet"
+            app:active_centre_button_background_color="@color/colorAccent"
+            app:inactive_centre_button_icon_color="@color/white"
+            app:active_centre_button_icon_color="@color/white"
+            app:space_item_icon_size="@dimen/space_item_icon_default_size"
+            app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+            app:space_item_text_size="@dimen/space_item_text_default_size"  />
+    </RelativeLayout>
+
+    <include layout="@layout/nav_veiw"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

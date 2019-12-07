@@ -19,11 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Education.EducationActivity" />
-
-        <!-- Start -->
+        <activity android:name=".Social.SocialActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Education.EducationActivity" /> <!-- Start -->
         <activity
             android:name=".Start.SplashActivity"
             android:theme="@style/FullScreen">
@@ -37,7 +35,6 @@
             android:name=".Start.StartActivity"
             android:theme="@style/AppCompat.NoActionBar" />
         <activity android:name=".Start.WelcomeActivity" />
-        <!--*********************************-->
     </application>
 
 </manifest>
