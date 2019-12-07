@@ -8,9 +8,13 @@
     android:id="@+id/drawerLayout"
     android:background="?attr/backgroundcolor">
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <include layout="@layout/app_bar_main"/>
 
         <FrameLayout
             android:layout_width="match_parent"

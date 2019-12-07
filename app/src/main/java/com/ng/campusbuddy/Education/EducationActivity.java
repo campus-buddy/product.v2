@@ -58,7 +58,8 @@ public class EducationActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.nav_home:
-                        Toast.makeText(mcontext, "Home", Toast.LENGTH_SHORT).show();
+                        Intent home = new Intent(mcontext, MainActivity.class);
+                        startActivity(home);
                         break;
                     case R.id.nav_education:
                         break;
