@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Social.SocialActivity"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".Social.SocialActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Education.EducationActivity" /> <!-- Start -->
         <activity

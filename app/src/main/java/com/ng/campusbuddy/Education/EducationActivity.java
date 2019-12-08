@@ -18,6 +18,7 @@ import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
 import com.ng.campusbuddy.MainActivity;
 import com.ng.campusbuddy.R;
+import com.ng.campusbuddy.SettingsActivity;
 import com.ng.campusbuddy.Social.SocialActivity;
 
 public class EducationActivity extends AppCompatActivity {
@@ -64,12 +65,17 @@ public class EducationActivity extends AppCompatActivity {
                     case R.id.nav_home:
                         Intent home = new Intent(mcontext, MainActivity.class);
                         startActivity(home);
+                        finish();
                         break;
                     case R.id.nav_education:
+                        Intent education = new Intent(mcontext, EducationActivity.class);
+                        startActivity(education);
+                        finish();
                         break;
                     case R.id.nav_social:
                         Intent social = new Intent(mcontext, SocialActivity.class);
                         startActivity(social);
+                        finish();
                         break;
                     case R.id.nav_entertainment:
                         Toast.makeText(mcontext, "Entertainment", Toast.LENGTH_SHORT).show();
@@ -78,7 +84,8 @@ public class EducationActivity extends AppCompatActivity {
                         Toast.makeText(mcontext, "Business", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_settings:
-                        Toast.makeText(mcontext, "Settings", Toast.LENGTH_SHORT).show();
+                        Intent settings = new Intent(mcontext, SettingsActivity.class);
+                        startActivity(settings);
                         break;
                     case R.id.nav_log_out:
                         Toast.makeText(mcontext, "Log Out", Toast.LENGTH_SHORT).show();
