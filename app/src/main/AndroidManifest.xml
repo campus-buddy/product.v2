@@ -19,6 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3781289519458764~5539518948"/>
+
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".Social.SocialActivity" />
         <activity android:name=".MainActivity" />

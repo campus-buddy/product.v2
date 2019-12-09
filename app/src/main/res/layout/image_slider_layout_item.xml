@@ -10,21 +10,13 @@
         android:layout_height="match_parent"
         app:srcCompat="@drawable/gradient_bg" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_auto_image_slider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="false"
-        android:background="@android:drawable/menu_full_frame"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:text="TEXT"
+        android:textColor="@color/white"
+        android:visibility="invisible"/>
 
-        <TextView
-            android:id="@+id/tv_auto_image_slider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TEXT"
-            android:textColor="@color/white" />
-    </LinearLayout>
 
 </RelativeLayout>

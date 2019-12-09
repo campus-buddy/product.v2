@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.ng.campusbuddy.Education.EducationActivity;
@@ -26,10 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
     Context mcontext = MainActivity.this;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MobileAds.initialize(mcontext,"ca-app-pub-3781289519458764/1715824006");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -39,20 +45,28 @@ public class MainActivity extends AppCompatActivity {
         FolatingActionButton();
 
         ADimageslider();
+        ADbanner();
+
+    }
+
+    private void ADbanner() {
+
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
     }
 
     private void ADimageslider() {
 
         SliderView sliderView = findViewById(R.id.imageSlider);
-
         SliderAdapter adapter = new SliderAdapter(this);
-
         sliderView.setSliderAdapter(adapter);
 
         sliderView.setIndicatorAnimation(IndicatorAnimations.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
         sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
-        sliderView.setIndicatorSelectedColor(Color.WHITE);
+        sliderView.setIndicatorSelectedColor(Color.RED);
         sliderView.setIndicatorUnselectedColor(Color.GRAY);
         sliderView.setScrollTimeInSec(4); //set scroll delay in seconds :
         sliderView.startAutoCycle();
@@ -114,4 +128,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
